@@ -1,6 +1,8 @@
+//recupère la valeur des input
 let email = document.getElementById("email");
 let mdp = document.getElementById("mdp");
 let bouton = document.getElementById("submit")
+
 
 let req = new XMLHttpRequest();
  let url = "http://127.0.0.1:3000/app/login/add";
@@ -10,7 +12,7 @@ let method, data, dataSend;
 
 
 
-// Handle login action
+// login action
 bouton.addEventListener('click', evt => {
   evt.preventDefault();
   method = "POST";
@@ -31,13 +33,20 @@ bouton.addEventListener('click', evt => {
 
   req.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
+      url ="http://127.0.0.1:3000/"
       let reponses = req.response;
       console.log(reponses)
-      console.log("OK")
+
+      //rediction vers le formulaire forecast
+      window.location.replace("./form.html")            
+
+     
+
     }
   };
+ 
+ 
 
-   
       
    
   
