@@ -29,25 +29,17 @@ bouton.addEventListener('click', evt => {
 
   
 
-  console.log('readyState',req.readyState)
-  console.log('status',req.status)
-  /*if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-}*/
+  req.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      let reponses = req.response;
+      console.log(reponses)
+      console.log("OK")
+    }
+  };
 
-    if (req.readyState === XMLHttpRequest.DONE) {
-      if (req.status == 200) {
-
-        //ici faire la redirection 
-        let reponses = req.response;
-        console.log(reponses)
-        console.log("OK")
-     
-      } else {
-        let reponsess = req.response;
-        console.log("NON OK")
-        console.log(reponsess)
-      }
-   }
+   
+      
+   
   
 })
 
