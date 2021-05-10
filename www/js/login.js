@@ -3,7 +3,9 @@ let mdp = document.getElementById("mdp");
 let bouton = document.getElementById("submit")
 
 let req = new XMLHttpRequest();
-let url = "http://127.0.0.1:3000/app/login/add";
+ let url = "http://127.0.0.1:3000/app/login/add";
+//let url = "https://reporting.antennesb.fr/login/add";
+
 let method, data, dataSend;
 
 
@@ -25,8 +27,17 @@ bouton.addEventListener('click', evt => {
   req.send(dataSend);
 
 
-    //if (req.readyState === XMLHttpRequest.DONE) {
-      if (req.status == 204) {
+  
+
+  console.log('readyState',req.readyState)
+  console.log('status',req.status)
+  /*if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+}*/
+
+    if (req.readyState === XMLHttpRequest.DONE) {
+      if (req.status == 200) {
+
+        //ici faire la redirection 
         let reponses = req.response;
         console.log(reponses)
         console.log("OK")
@@ -36,7 +47,7 @@ bouton.addEventListener('click', evt => {
         console.log("NON OK")
         console.log(reponsess)
       }
-  //  }
+   }
   
 })
 
