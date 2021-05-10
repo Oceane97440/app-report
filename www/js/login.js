@@ -33,7 +33,6 @@ bouton.addEventListener('click', evt => {
 
   req.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      url ="http://127.0.0.1:3000/"
       let reponses = req.response;
       console.log(reponses)
 

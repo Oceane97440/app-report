@@ -63,10 +63,10 @@ h1
 
 }
 
-input.btn.btn-block.btn-default.text-white {
+button.btn.btn-block.btn-default.text-white {
     background-color: #4cd7ef;
 }
-input.btn.btn-block.btn-default.text-white:hover {
+button.btn.btn-block.btn-default.text-white:hover {
     box-shadow: 2px 2px 5px black;
 }
 a {
@@ -168,3 +168,7 @@ div.card.bg-dark.text-dark{
 
     border-radius: 1.25rem !important;
 }    
+img#logo{
+    width: 83px;
+    height: 100%
+}
