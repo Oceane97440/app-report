@@ -1,51 +1,200 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<html lang="fr">
 
-    http://www.apache.org/licenses/LICENSE-2.0
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/4d66efb478.js"></script>
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+    <link href="./css/forecast.css" rel="stylesheet" />
+    <title>Forecast</title>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" >
+            <img src="./img/logo.png" id="logo" alt="image" >
+          
+        </a>
+
+        <ul class="nav justify-content-end">
+
+
+        
+
+
+            <li class="nav-item text-white">
+                <button type="button"  id="logout" name="submit" class="btn btn-block btn-danger text-white "
+                value="Valider">Déconnexion</button>
+            </li>
+        
+          </ul>
+        </nav>
+     
+               
+
+    <div class="container">
+        <div id="alert"></div>
+        <div class="row">
+
+            <div class="col-lg-6">
+                <div class="our-team-main">
+
+
+
+                    <div id="card-forecast" class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                Inventaire SMART
+                            </h4>
+                        </div>
+
+                        <div class="card-body text-left">
+
+
+                            <form action="#" id="forecast" method="POST">
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <div class="md-form">
+                                            <label for=" date_start">Date de début </label>
+                                            <input type="date" class="form-control" name="date_start" id="date_start"
+                                                value="" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="md-form">
+                                            <label for="date_end">Date de fin </label>
+                                            <input type="date" class="form-control" name="date_end" id="date_end"
+                                                value="" required>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="format">Format</label>
+                                    <select class="form-control" name="format" id="format" required="required">
+                                     
+
+                                    </select>
+
+
+
+                                </div>
+
+
+
+                                <div class="form-group">
+
+                                    <label for="packs">Packs</label>
+                                    <select class="form-control" name="packs" id="packs" required="required">
+
+                                    </select>
+
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label>Géolocalisation</label>
+                                    <br>
+                                    <div> 
+                                        <label class="form-check-label">Réunion</label>
+                                        <span id="span"></span>
+                                    </div>
+
+
+                                </div>
+
+                                <br>
+
+
+
+
+
+                        </div>
+                        <div class="card-footer bg-transparent border-success justify-content-center d-flex">
+                            <div class="col-sm-12 text-right">
+                                <button type="button"  id="btn" name="submit" class="btn btn-block btn-default text-white "
+                                    value="Valider">Valider</button>
+
+
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+
+
+
+
+
+                </div>
             </div>
+            <!--section 1-->
+
+            <div class="col-lg-6">
+                <div class="our-team-main">
+
+
+                    <div class="card" id="card-info">
+
+
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <img src="./img/search.jpg"></img>
+
+                                <p>Choisir une date prévisionnel
+                                </p>
+                            </blockquote>
+                        </div>
+
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <img src="./img/data.jpg"></img>
+                                <p>Calculer votre inventaire. Sélectionner le pack et le format
+                                </p>
+                            </blockquote>
+                        </div>
+
+
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <img src="./img/valider.jpg"></img>
+
+                                <p> Valider le formulaire
+                                </p>
+                            </blockquote>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--section 2-->
+
         </div>
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
-    </body>
-</html>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/form.js"></script>
+</body>

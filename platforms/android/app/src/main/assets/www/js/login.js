@@ -1,95 +1,69 @@
-function functionValue() {
-  var essai= $('#email').val();
-
-  //alert(essai)
-
-  document.getElementById("demo").innerHTML = essai
-
-  
-  var email = document.getElementById("email").value;
-  var mdp = document.getElementById("mdp").value;
-
-
-  var data = {
-    email: email,
-    mdp: mdp
-  };
-  //console.log('functionValue',data)
-
-  return data;
-
-}
-
-/*
-// Requete Ajax 
-let data, method;
-
+//recupère la valeur des input
+let email = document.getElementById("email");
+let mdp = document.getElementById("mdp");
+let bouton = document.getElementById("submit")
 
 
 let req = new XMLHttpRequest();
-let url = 'https://reporting.antennesb.fr/login/add';
-data = functionValue();
-
-method = "POST"
-req.open(method, url);
-req.responseType = "json";
-req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-req.send(data);
-console.log(data)
-console.log(method)
-console.log(url)
+//let url = "http://127.0.0.1:3000/app/login/add";
+let url = "https://reporting.antennesb.fr/app/login/add";
+let method, data, dataSend;
 
 
 
-//if (req.readyState == XMLHttpRequest.DONE && req.status == 200) {}
-if (req.readyState == XMLHttpRequest.DONE && req.status == 200) {
-  document.getElementById("demo").innerHTML = "Vous avez été connecté avec succès !"
+// login action
+bouton.addEventListener('click', evt => {
+  evt.preventDefault();
+  method = "POST";
+  data = {
+    email: email.value,
+    mdp: mdp.value
+  }
+  console.log(data)
 
-}
-*/
-/*
-function sendForm()
-{
-// Récupération des valeurs des champs de formulaire
-var post_id = document.getElementById('post_id').value;
-var name = document.getElementById('name').value;
-var comment = document.getElementById('comment').value;
-
-// Préparation de la querystring d'URL
-var params = '?post_id=' + encodeURIComponent(post_id);
-params += '&name=' + encodeURIComponent(name);
-params += '&comment=' + encodeURIComponent(comment);
-
-// Récupération de l'objet XHR
-var xhr = getXhr();
-
-// On assigne une fonction qui, lorsque l'état de la requête change, va traiter le résultat
-xhr.onreadystatechange = function()
-{
-// readyState 4 = requête terminée
-if (xhr.readyState == 4)
-{
-// status 200 = page requêtée trouvée
-if (xhr.status == 200)
-ajaxBox_setText(xhr.responseText);
-// Page non trouvée
-else
-ajaxBox_setText('Error...');
-}
-};
-
-// Passage des paramètres à l'URL puis éxecution de la requête
-var url = 'http://site.com/send-form.php' + params;
-xhr.open('GET', url, true);
-xhr.send(null);
-}
+  dataSend = JSON.stringify(data);
+  req.open(method, url);
+  req.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+  req.responseType = "json";
+  req.send(dataSend);
 
 
 
-// Fonction de mise à jour du contenu de l'élement HTML #result
-function ajaxBox_setText(pText)
-{
-var p = document.getElementById('result');
-p.appendChild(document.createTextNode(pText));
-}
- */
+
+  req.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      let reponses = req.response;
+      console.log(reponses.success)
+
+      if (reponses.success != false) {
+       //rediction vers le formulaire forecast
+       window.location.replace("./form.html")
+
+      } else {
+
+      
+       var message = reponses.message.message
+
+        $("#alert").html(`<div class="alert alert-danger alert-dismissible fade show text-dark" role="alert">
+        ${message}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>`)
+
+
+        $("#alert").show();
+      }
+
+
+
+
+    }
+  };
+
+
+
+
+
+
+})

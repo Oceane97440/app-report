@@ -1,78 +1,105 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="fr">
 
 <head>
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-    <meta name="color-scheme" content="light dark"> -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link href="./css/login.css" rel="stylesheet" />
+	<script src="https://kit.fontawesome.com/4d66efb478.js"></script>
 
-
-    <title>Login</title>
+	<title>Login</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
+
+
+	<div class="container" >
+		<div class="row" style="margin-top: 20px;">
+
+
+			<!--section 1-->
+
+			<div class="col-lg-6  p-0">
+				<div class="card bg-dark text-dark">
+					<img src="./img/login.jpg" class="card-img" alt="..." id="img_signup">
+					<div class="card-img-overlay" id="alert">
+
+						
+
+					</div>
+				
+				</div>
+			</div>
+
+			<!--section 2-->
+			<div class="col-lg-6 p-0">
+				<div class="our-team-main">
 
 
 
-            <h4>
-                Connexion
-            </h4>
+					<div id="card-login" class="card">
+						<div class="card-header">
+							<h4 class="card-title">
+								Connexion
+							</h4>
+						</div>
 
-            
-            <div id="demo"></div>
-
-
-
-            <form method="POST" action="./form.html">
+						<div class="card-body text-left">
 
 
-
-                <div class="col">
-                    <div class="md-form">
-                        <label for="email"><i class="fas fa-at" id="icon"></i>Email</label>
-                        <input type="email" class="form-control" name="email" id="email" 
-                            placeholder="email@gmail.com" required>
-                    </div>
-                </div>
+                            <form method="POST" action="#">
 
 
 
-                <div class="col">
-                    <div class="md-form">
-                        <label for="mdp"><i class="fas fa-key" id="icon"></i>Mot de passe </label>
-
-
-                        <input type="password" class="form-control" name="mdp" id="mdp" 
-                            placeholder="6 caratère + 1 caratère spéciaux" required>
-
-                    </div>
-                </div>
+								<div class="col">
+									<div class="md-form">
+										<label for="email"><i class="fas fa-at" id="icon"></i>Email</label>
+										<input type="email" class="form-control" name="email" id="email" value=""
+											placeholder="email@gmail.com" required>
+									</div>
+								</div>
 
 
 
+								<div class="col">
+									<div class="md-form">
+										<label for="mdp"><i class="fas fa-key" id="icon"></i>Mot de passe </label>
 
 
+										<input type="password" class="form-control" name="mdp" id="mdp" value=""
+											placeholder="6 caratères + 1 caratère spécial" required>
 
-                <input type="button" onclick="functionValue();" style="background-color: #ff4f5a" value="Valider" />
-
-         
-            </form>
+									</div>
+								</div>
 
 
 
 
 
 
-        </div>
-    </div>
-    </div>
+						</div>
+						<div class="card-footer bg-transparent  justify-content-center d-flex">
+							<div class="col-sm-12 text-right">
+                                <button type="submit"  class="btn btn-block btn-default text-white"  id="submit"  value="Valider" >Valider</button>
 
-    </div>    
+							</div>
+						</div>
+
+				
+						</form>
+					</div>
+
+
+
+
+
+				</div>
+			</div>
+		</div>
+
+	</div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
   </script>
@@ -86,9 +113,4 @@
     <script src="cordova.js"></script>
     <script src="js/index.js"></script>
      <script src="js/login.js"></script>
- 
-
-
 </body>
-
-</html>
