@@ -41,7 +41,7 @@ $(document).ready(function () {
 
 })
 
-
+//event du click action requête
 $("#btn").click(function () {
 
     //récupère les valeurs des input (ajax)
@@ -67,8 +67,8 @@ $("#btn").click(function () {
         packs: packs,
         countries: countries
     }
-    console.log(data)
 
+    //envoie requête format json
     dataSend = JSON.stringify(data);
     req.open(method, url);
     req.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
@@ -79,15 +79,18 @@ $("#btn").click(function () {
 
 
     req.onreadystatechange = function () {
+            //ecoute statut
+
         if (this.readyState == 4 && this.status == 200) {
 
 
 
+            //recupère la reponse envoyer via api node en json
             let reponses = req.response;
-            console.log(reponses.success)
 
             if (reponses.success != false) {
 
+                //si success true save la data dans le localstorage
                 localStorage.setItem('data', JSON.stringify(req.response.table));
 
                 //revoie vers la page
@@ -97,6 +100,7 @@ $("#btn").click(function () {
             } else {
 
 
+                //sinon success false envoie un message erreur en ajax 
                 var message = reponses.message.message
 
                     $("#alert").html(`<div class="alert alert-danger alert-dismissible fade show text-dark" role="alert">
@@ -118,6 +122,7 @@ $("#btn").click(function () {
 
 });
 
+//deconnexion
 $("#logout").click(function () {
 
 
@@ -134,13 +139,11 @@ $("#logout").click(function () {
     req.send();
 
 
-    console.log(req)
 
 
     req.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let reponses = req.response;
-            console.log(reponses.success)
 
             if (reponses.success === true) {
 

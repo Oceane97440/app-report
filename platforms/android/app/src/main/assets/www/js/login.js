@@ -19,7 +19,6 @@ bouton.addEventListener('click', evt => {
     email: email.value,
     mdp: mdp.value
   }
-  console.log(data)
 
   dataSend = JSON.stringify(data);
   req.open(method, url);
@@ -30,10 +29,11 @@ bouton.addEventListener('click', evt => {
 
 
 
+  
   req.onreadystatechange = function () {
+
     if (this.readyState == 4 && this.status == 200) {
       let reponses = req.response;
-      console.log(reponses.success)
 
       if (reponses.success != false) {
        //rediction vers le formulaire forecast
