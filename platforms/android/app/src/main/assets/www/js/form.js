@@ -1,5 +1,17 @@
 $(document).ready(function () {
 
+    const now = new Date();
+
+    var timestamp_now = now.setDate(now.getDate() + 1);
+    var timestamp_end = now.setDate(now.getDate() + 15);
+
+    const date_start_last = new Date(timestamp_now)
+    const date_end_last = new Date(timestamp_end)
+
+
+    document.getElementById("date_start").valueAsDate = date_start_last;
+    document.getElementById("date_end").valueAsDate = date_end_last;
+
 
     //recupère les données de l'api node 
     $.get(`https://reporting.antennesb.fr/app/json/formats`, function (formats) {
@@ -56,7 +68,7 @@ $("#btn").click(function () {
 
 
     let req = new XMLHttpRequest();
-   // let url = "http://127.0.0.1:3000/app/forecast/add";
+    //let url = "http://127.0.0.1:3000/app/forecast/add";
     let url = "https://reporting.antennesb.fr/app/forecast/add";
 
     method = "POST";
@@ -67,6 +79,7 @@ $("#btn").click(function () {
         packs: packs,
         countries: countries
     }
+    console.log(data)
 
     //envoie requête format json
     dataSend = JSON.stringify(data);

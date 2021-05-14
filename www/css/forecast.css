@@ -172,3 +172,8 @@ img#logo{
     width: 83px;
     height: 100%
 }
+
+li.list-group-item {
+    background-color: #5662ec !important
+
+}

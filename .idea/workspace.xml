@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d9733a8-13bb-4ad0-9aa8-587bb3c431f2" name="Default Changelist" comment="" />
+    <list default="true" id="2d9733a8-13bb-4ad0-9aa8-587bb3c431f2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/css/forecast.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/forecast.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/forecast.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/forecast.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/js/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/login.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
