@@ -79,7 +79,7 @@ $("#btn").click(function () {
         packs: packs,
         countries: countries
     }
-    console.log(data)
+    // console.log(data)
 
     //envoie requête format json
     dataSend = JSON.stringify(data);
@@ -92,7 +92,7 @@ $("#btn").click(function () {
 
 
     req.onreadystatechange = function () {
-            //ecoute statut
+        //ecoute statut
 
         if (this.readyState == 4 && this.status == 200) {
 
@@ -113,18 +113,18 @@ $("#btn").click(function () {
             } else {
 
 
-                //sinon success false envoie un message erreur en ajax 
+                //affiche la model avec le message erreur
+                $("#exampleModal").modal("show");
+
+
                 var message = reponses.message.message
 
-                    $("#alert").html(`<div class="alert alert-danger alert-dismissible fade show text-dark" role="alert">
-                    ${message}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>`)
+
+                let alert = `${message}`;
 
 
-                $("#alert").show();
+
+                $("#alert").html(alert);
             }
 
         }
@@ -166,10 +166,10 @@ $("#logout").click(function () {
                 window.location.replace("./index.html")
 
 
-            } 
+            }
 
 
-           
+
         }
     };
     //  

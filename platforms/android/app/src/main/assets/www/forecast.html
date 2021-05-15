@@ -24,15 +24,15 @@
         <ul class="nav justify-content-end">
 
 
-            <li class="nav-item text-white"style=" margin-right: 10px;">
+            <li class="nav-item text-white" style=" margin-right: 10px;">
                 <button type="button" id="back" name="submit" class="btn btn-block btn-danger text-white "
                     value="Valider"><i class="fas fa-arrow-left"></i></button>
             </li>
-           
+
 
             <li class="nav-item text-white">
                 <button type="button" id="logout" name="submit" class="btn btn-block btn-danger text-white "
-                    value="Valider"><i class="fas fa-sign-out-alt"></i>  Déconnexion</button>
+                    value="Valider"><i class="fas fa-sign-out-alt"></i> Déconnexion</button>
             </li>
 
         </ul>
@@ -54,21 +54,26 @@
                         </div>
 
                         <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i id="icon" class="fas fa-calendar-day"></i>Date de début:
+                                    <strong id="date-start"></strong></li>
 
-                            <p><i id="icon" class="fas fa-calendar-day"></i>Date de début: <strong
-                                    id="date-start"></strong></p>
-                            <p><i id="icon" class="fas fa-calendar-day"></i>Date de fin: <strong id="date-end"></strong>
-                            </p>
+                                <li class="list-group-item"><i id="icon" class="fas fa-calendar-day"></i>Date de fin:
+                                    <strong id="date-end"></strong></li>
+
+                                <li class="list-group-item">Format:<strong id="format"> </strong></li>
+                                <li class="list-group-item"><i id="icon" class="fas fa-chart-pie"></i>Volume total:
+                                    <strong id="impression"></strong></li>
+
+                                <li class="list-group-item">Volume occupé: <strong id="occupied"></strong></li>
+
+                                <li class="list-group-item"><i id="icon" class="far fa-check-circle"></i>Volume
+                                    disponible: <strong id="dispo"></strong></li>
 
 
 
+                            </ul>
 
-                            <p>Format:<strong id="format"> </strong></p>
-                            <p><i id="icon" class="fas fa-chart-pie"></i>Volume total: <strong id="impression"></strong>
-                            </p>
-                            <p>Volume occupé: <strong id="occupied"></strong></p>
-                            <p><i id="icon" class="far fa-check-circle"></i>Volume disponible: <strong
-                                    id="dispo"></strong>
 
 
                         </div>

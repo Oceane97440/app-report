@@ -168,3 +168,9 @@ div.card.bg-dark.text-dark{
 
     border-radius: 1.25rem !important;
 }    
+
+@media screen and (max-width: 640px) {
+    #bloc {
+      display:none;
+    }
+  }
