@@ -22,5 +22,6 @@
     <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
         <application android:usesCleartextTraffic="true" />
     </edit-config>
+    <icon src="www/res/icon/logo.png" />
     <preference name="loglevel" value="DEBUG" />
 </widget>

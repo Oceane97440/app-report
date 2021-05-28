@@ -177,3 +177,9 @@ li.list-group-item {
     background-color: #5662ec !important
 
 }
+
+@media screen and (max-width: 640px) {
+    #bloc {
+      display:none;
+    }
+  }

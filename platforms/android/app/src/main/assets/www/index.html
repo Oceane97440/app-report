@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link rel="stylesheet" media="screen and (max-width: 640px)" href="smallscreen.css" type="text/css" />
 	<link href="./css/login.css" rel="stylesheet" />
 	<script src="https://kit.fontawesome.com/4d66efb478.js"></script>
 
@@ -14,12 +15,13 @@
 
 <body>
 
-	<div class="modal fade bd-example-modal-sm"  id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
-		aria-hidden="true">
+	<div class="modal fade bd-example-modal-sm" id="exampleModal" tabindex="-1" role="dialog"
+		aria-labelledby="mySmallModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title">Un problème est survenu</h5>
+					<h5 class="modal-title"><i class="fas fa-exclamation-triangle" id="icon"></i> Un problème est
+						survenu</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -27,7 +29,7 @@
 				<div class="modal-body" id="alert">
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
 				</div>
 			</div>
 
@@ -39,10 +41,10 @@
 
 
 	<div class="container">
-		<div class="row" style="margin-top: 20px;">
+		<div class="row">
 
 
-	
+
 			<!--section 1-->
 			<div class="col-lg-6 p-0">
 				<div class="our-team-main">
@@ -52,7 +54,7 @@
 					<div id="card-login" class="card">
 						<div class="card-header">
 							<h4 class="card-title">
-								Connexion
+								Se connecter
 							</h4>
 						</div>
 
@@ -67,7 +69,7 @@
 									<div class="md-form">
 										<label for="email"><i class="fas fa-at" id="icon"></i>Email</label>
 										<input type="email" class="form-control" name="email" id="email" value=""
-											placeholder="email@gmail.com" required>
+											placeholder="saisissez votre email" required>
 									</div>
 								</div>
 
@@ -79,7 +81,7 @@
 
 
 										<input type="password" class="form-control" name="mdp" id="mdp" value=""
-											placeholder="6 caratères + 1 caratère spécial" required>
+											placeholder="saisissez votre mot de passe" required>
 
 									</div>
 								</div>
@@ -92,9 +94,8 @@
 						</div>
 						<div class="card-footer bg-transparent  justify-content-center d-flex">
 							<div class="col-sm-12 text-right">
-								<button type="submit" 
-									class="btn btn-block btn-default text-white" id="submit"
-									value="Valider">Valider</button>
+								<button type="submit" class="btn btn-block btn-default text-white" id="submit"
+									value="Valider">Se connecter</button>
 
 							</div>
 						</div>
@@ -110,20 +111,20 @@
 				</div>
 			</div>
 
-					<!--section 2-->
+			<!--section 2-->
 
-					<div class="col-lg-6  p-0">
-						<div class="card bg-dark text-dark">
-							<img src="./img/login.jpg" class="card-img" alt="..." id="img_signup">
-							<div class="card-img-overlay">
-		
-		
-		
-							</div>
-		
-						</div>
+			<div class="col-lg-6  p-0" id="bloc">
+				<div class="card bg-dark text-dark">
+					<img src="./img/login.jpg" class="card-img" alt="..." id="img_signup">
+					<div class="card-img-overlay">
+
+
+
 					</div>
-		
+
+				</div>
+			</div>
+
 		</div>
 
 	</div>
